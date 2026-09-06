@@ -32,10 +32,10 @@ JOINT_NAMES = ["base_shoulder", "shoulder_arm1", "arm1_arm2", "arn2_end_arm"]
 # adc_min/adc_max: 관절을 물리적 최소~최대로 움직였을 때 읽힌 raw ADC 값 (0~1023)
 # angle_min/angle_max: 그 ADC 값에 대응하는 라디안 각도 (URDF 조인트 range 참고, 기본 -pi~pi)
 CALIBRATION = {
-    "base_shoulder":  {"adc_min": 0,   "adc_max": 672, "angle_min": -2.3562, "angle_max": 2.3562},
-    "shoulder_arm1":  {"adc_min": 0,   "adc_max": 666, "angle_min": -1.5708, "angle_max": 1.5708},
-    "arm1_arm2":      {"adc_min": 0,   "adc_max": 672, "angle_min": -2.0944, "angle_max": 2.0944},
-    "arn2_end_arm":   {"adc_min": 0,   "adc_max": 663, "angle_min": -3.14159, "angle_max": 3.14159},
+    "base_shoulder":  {"adc_min": 0,   "adc_max": 671, "angle_min": -2.3562, "angle_max": 2.3562},
+    "shoulder_arm1":  {"adc_min": 0,   "adc_max": 671, "angle_min": -1.5708, "angle_max": 1.5708},
+    "arm1_arm2":      {"adc_min": 0,   "adc_max": 671, "angle_min": -2.0944, "angle_max": 2.0944},
+    "arn2_end_arm":   {"adc_min": 0,   "adc_max": 670, "angle_min": -3.14159, "angle_max": 3.14159},
 }
 
 SMOOTHING_ALPHA = 0.3  # 0(느림/부드러움) ~ 1(빠름/노이즈에 민감)

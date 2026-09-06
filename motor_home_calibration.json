@@ -1,0 +1,14 @@
+{
+  "servo_home_angle_deg": {
+    "base_shoulder": 90,
+    "shoulder_arm1": 90,
+    "arm1_arm2": 90,
+    "arn2_end_arm": 90
+  },
+  "adc_at_home": {
+    "base_shoulder": 342.0,
+    "shoulder_arm1": 321.0,
+    "arm1_arm2": 323.0,
+    "arn2_end_arm": 336.0
+  }
+}

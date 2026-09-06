@@ -1,0 +1,46 @@
+# =====================================================
+# Robot Information
+# =====================================================
+robot:
+  name: unknown_robot
+  manufacturer: unknown
+  model: unknown
+
+# =====================================================
+# ROS2 Topics
+# (로봇마다 Topic 이름이 달라질 수 있으므로 여기에서 관리)
+# =====================================================
+topics:
+  image: /camera/image_raw
+  joint_state: /joint_states
+  action: /action
+  force_torque: /wrench
+  end_effector_pose: /tf
+
+# =====================================================
+# Recording Settings
+# =====================================================
+record:
+  fps: 30
+
+# =====================================================
+# Camera Settings
+# =====================================================
+camera:
+  width: 640
+  height: 480
+  encoding: rgb8
+
+# =====================================================
+# Dataset Information
+# =====================================================
+dataset:
+  name: lerobot_dataset
+  version: 1.0
+
+# =====================================================
+# Output Folder
+# =====================================================
+output:
+  raw_data: raw_data
+  dataset: datasets
