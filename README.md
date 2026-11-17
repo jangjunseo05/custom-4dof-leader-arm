@@ -6,7 +6,7 @@ SG90 마이크로 서보를 개조해 만든 저비용 4자유도 마스터("리
 
 ## 개요
 
-팔의 CAD 모델(`jdcobot100`)은 Onshape에서 설계하고 `onshape-to-robot`으로 URDF로 내보냈습니다. 회전 관절 4개 — `base_shoulder`, `shoulder_arm1`, `arm1_arm2`, `arn2_end_arm` — 로 이루어져 있고, 각 관절의 범위는 ±180°(±π rad)이며 SG90 마이크로 서보로 구동됩니다. 같은 URDF를 `meshes/`의 메시와 함께 MuJoCo 장면(`scene.xml`, `ros_arm.xml`)으로 감싸, 동일한 기구학 구조를 ROS 2/RViz에서 시각화하거나 MuJoCo에서 시뮬레이션할 수 있습니다.
+팔의 부품은 Fusion에서 설계해 3D 프린팅했고, 로봇 모델(`jdcobot100`)은 Onshape에서 `onshape-to-robot`으로 URDF로 내보냈습니다. 회전 관절 4개 — `base_shoulder`, `shoulder_arm1`, `arm1_arm2`, `arn2_end_arm` — 로 이루어져 있고, 각 관절의 범위는 ±180°(±π rad)이며 SG90 마이크로 서보로 구동됩니다. 같은 URDF를 `meshes/`의 메시와 함께 MuJoCo 장면(`scene.xml`, `ros_arm.xml`)으로 감싸, 동일한 기구학 구조를 ROS 2/RViz에서 시각화하거나 MuJoCo에서 시뮬레이션할 수 있습니다.
 
 외장 로터리 엔코더를 사는 대신 SG90 서보 4개를 분해해 내부 포텐셔미터 와이퍼에 점퍼선을 직접 납땜했고, 덕분에 팔에 달린 서보 포텐셔미터를 저렴한 관절 각도 센서로 함께 쓸 수 있게 되었습니다. 이렇게 실물 팔은 수동형 "리더" 장치가 됩니다. 사람이 손으로 관절을 움직이면, 포텐셔미터 전압 원시값을 관절 각도로 읽어 들입니다.
 
@@ -51,4 +51,4 @@ ros2 launch ros_arm display.launch.py         # robot_state_publisher + joint_gu
 - **시뮬레이션**: MuJoCo, `mujoco.viewer`
 - **로보틱스 미들웨어**: ROS 2(`rclpy`, `robot_state_publisher`, `RViz2`, `sensor_msgs`), URDF
 - **호스트 소프트웨어**: Python(`pyserial`, `mujoco`, `tkinter`)
-- **CAD / 모델링**: Onshape, `onshape-to-robot`(URDF + 메시 내보내기)
+- **CAD / 모델링**: Fusion(부품 설계), Onshape + `onshape-to-robot`(URDF + 메시 내보내기)

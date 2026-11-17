@@ -4,7 +4,7 @@ A low-cost, 4-DOF master ("leader") robot arm built from repurposed SG90 micro s
 
 ## Overview
 
-The arm's CAD model (`jdcobot100`) was designed in Onshape and exported to URDF via `onshape-to-robot`. It has 4 revolute joints — `base_shoulder`, `shoulder_arm1`, `arm1_arm2`, `arn2_end_arm` — each with a ±180° (±π rad) range, actuated by SG90 micro servos. The same URDF is wrapped into a MuJoCo scene (`scene.xml`, `ros_arm.xml`) using the meshes in `meshes/`, so the identical kinematic structure can be visualized either in ROS 2/RViz or simulated in MuJoCo.
+The arm's parts were designed in Fusion and 3D-printed; the robot model (`jdcobot100`) was exported from Onshape to URDF via `onshape-to-robot`. It has 4 revolute joints — `base_shoulder`, `shoulder_arm1`, `arm1_arm2`, `arn2_end_arm` — each with a ±180° (±π rad) range, actuated by SG90 micro servos. The same URDF is wrapped into a MuJoCo scene (`scene.xml`, `ros_arm.xml`) using the meshes in `meshes/`, so the identical kinematic structure can be visualized either in ROS 2/RViz or simulated in MuJoCo.
 
 Instead of buying external rotary encoders, the four SG90 servos were disassembled and jumper wires were soldered directly onto their internal potentiometer wipers, letting the arm's own servo potentiometers double as a cheap joint-angle sensor. This turns the physical arm into a passive "leader" device: a human moves the joints by hand, and the raw potentiometer voltage is read back as the joint angle.
 
@@ -49,4 +49,4 @@ ros2 launch ros_arm display.launch.py         # robot_state_publisher + joint_gu
 - **Simulation**: MuJoCo, `mujoco.viewer`
 - **Robotics middleware**: ROS 2 (`rclpy`, `robot_state_publisher`, `RViz2`, `sensor_msgs`), URDF
 - **Host software**: Python (`pyserial`, `mujoco`, `tkinter`)
-- **CAD / modeling**: Onshape, `onshape-to-robot` (URDF + mesh export)
+- **CAD / modeling**: Fusion (part design), Onshape + `onshape-to-robot` (URDF + mesh export)
